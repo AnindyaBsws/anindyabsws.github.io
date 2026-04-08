@@ -7,30 +7,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg0:#07070f; --bg1:#0d0d1a; --bg2:#141425; --bg3:#1e1e30;
-  --accent:#a78bfa;       /* violet-400 */
-  --accent-hi:#c4b5fd;    /* violet-300 */
-  --accent-glow:#7c3aed;  /* violet-600 */
-  --cyan:#67e8f9;         /* cyan-300 */
-  --gold:#fbbf24;
-  --txt1:#ede9fe; --txt2:#8b8baa; --txt3:#4a4a66;
-  --s-bg:rgba(255,255,255,.04); --s-bd:rgba(167,139,250,.18); --s-txt:#9898b8;
-  --da:#2d1b69; --db:#1e1050;
-  --glass-bg:rgba(255,255,255,.04);
-  --glass-bd:rgba(167,139,250,.18);
-  --glass-blur:16px;
+  --bg0:#0a0a0c; --bg1:#111318; --bg2:#1c1f26; --bg3:#252830;
+  --grass:#3a7a20; --grass-hi:#5cb82f; --grass-glow:#7dd44a;
+  --diamond:#4fc3f7; --gold:#f5c518;
+  --txt1:#e8e8e0; --txt2:#8a8a82; --txt3:#4a4a44;
+  --s-bg:#17191e; --s-bd:#2a2c33; --s-txt:#7a7a72;
+  --da:#2d5a1b; --db:#1a3610;
 }
 @media(prefers-color-scheme:light){
   :root{
-    --bg0:#f0eeff; --bg1:#e8e4ff; --bg2:#ddd8f8; --bg3:#cdc7f0;
-    --accent:#7c3aed; --accent-hi:#6d28d9; --accent-glow:#5b21b6;
-    --cyan:#0891b2; --gold:#d97706;
-    --txt1:#1e1b4b; --txt2:#4c4870; --txt3:#9c98bc;
-    --s-bg:rgba(124,58,237,.06); --s-bd:rgba(124,58,237,.2); --s-txt:#4c4870;
-    --da:#7c3aed; --db:#5b21b6;
-    --glass-bg:rgba(255,255,255,.45);
-    --glass-bd:rgba(124,58,237,.2);
-    --glass-blur:20px;
+    --bg0:#f4f2ec; --bg1:#eae8e0; --bg2:#dedad0; --bg3:#ccc9be;
+    --grass:#2a5c14; --grass-hi:#3a7a20; --grass-glow:#4a9828;
+    --diamond:#1278a0; --gold:#9a7200;
+    --txt1:#18180e; --txt2:#545448; --txt3:#9a9a8e;
+    --s-bg:#e2e0d8; --s-bd:#c4c2b8; --s-txt:#545448;
+    --da:#4a8c2a; --db:#2d6016;
   }
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -41,44 +32,32 @@ body{
   cursor:crosshair;overflow-x:hidden;
   transition:background .35s,color .35s;
 }
-
-/* AMBIENT ORBS */
-body::after{
-  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
-  background:
-    radial-gradient(ellipse 60% 50% at 15% 20%,rgba(124,58,237,.13) 0%,transparent 70%),
-    radial-gradient(ellipse 50% 40% at 85% 70%,rgba(103,232,249,.09) 0%,transparent 70%),
-    radial-gradient(ellipse 40% 35% at 50% 50%,rgba(167,139,250,.06) 0%,transparent 70%);
-}
-
-/* GRID */
 body::before{
   content:'';position:fixed;inset:0;
   background-image:
-    linear-gradient(rgba(167,139,250,.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(167,139,250,.04) 1px,transparent 1px);
+    linear-gradient(rgba(128,128,128,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(128,128,128,.035) 1px,transparent 1px);
   background-size:32px 32px;
   pointer-events:none;z-index:0;
 }
 ::-webkit-scrollbar{width:6px;}
 ::-webkit-scrollbar-track{background:var(--bg0);}
-::-webkit-scrollbar-thumb{background:var(--accent-glow);}
+::-webkit-scrollbar-thumb{background:var(--grass);}
 
 /* NAV */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
-  background:var(--glass-bg);
-  border-bottom:1px solid var(--glass-bd);
+  background:color-mix(in srgb,var(--bg0) 85%,transparent);
+  border-bottom:1px solid var(--bg3);
   padding:13px 6%;
   display:flex;justify-content:space-between;align-items:center;
-  backdrop-filter:blur(var(--glass-blur)) saturate(180%);
-  -webkit-backdrop-filter:blur(var(--glass-blur)) saturate(180%);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
   transition:background .35s;
 }
 .nav-logo{
   font-family:'Press Start 2P';font-size:10px;
-  color:var(--accent-hi);text-decoration:none;letter-spacing:1px;
-  text-shadow:0 0 20px rgba(167,139,250,.5);
+  color:var(--grass-glow);text-decoration:none;letter-spacing:1px;
+  text-shadow:2px 2px 0 rgba(0,0,0,.3);
 }
 .nav-links{display:flex;gap:26px;list-style:none;}
 .nav-links a{
@@ -87,9 +66,9 @@ nav{
 }
 .nav-links a::after{
   content:'';position:absolute;bottom:-2px;left:0;
-  height:1.5px;width:0;background:var(--accent-hi);transition:width .2s;
+  height:1.5px;width:0;background:var(--grass-glow);transition:width .2s;
 }
-.nav-links a:hover{color:var(--accent-hi);}
+.nav-links a:hover{color:var(--grass-glow);}
 .nav-links a:hover::after{width:100%;}
 
 /* HERO */
@@ -103,13 +82,13 @@ nav{
 .blk{position:absolute;image-rendering:pixelated;opacity:0;animation:dropBlk linear infinite;}
 @keyframes dropBlk{
   0%  {transform:translateY(-60px) rotate(0deg);  opacity:0;}
-  6%  {opacity:.04;}
-  90% {opacity:.04;}
+  6%  {opacity:.055;}
+  90% {opacity:.055;}
   100%{transform:translateY(110vh) rotate(200deg);opacity:0;}
 }
 
 .hero-tag{
-  font-family:'VT323';font-size:18px;color:var(--accent-hi);letter-spacing:4px;
+  font-family:'VT323';font-size:18px;color:var(--grass-hi);letter-spacing:4px;
   margin-bottom:14px;opacity:0;
   animation:slideUp .75s .05s cubic-bezier(.16,1,.3,1) forwards;
 }
@@ -122,14 +101,14 @@ nav{
   text-shadow:4px 4px 0 rgba(0,0,0,.22);margin-bottom:18px;
   opacity:0;animation:slideUp .75s .22s cubic-bezier(.16,1,.3,1) forwards;
 }
-.hero-name em{color:var(--accent-hi);font-style:normal;}
+.hero-name em{color:var(--grass-glow);font-style:normal;}
 
 .hero-bio{
   font-size:22px;color:var(--txt2);max-width:520px;margin-bottom:42px;
   opacity:0;animation:slideUp .75s .38s cubic-bezier(.16,1,.3,1) forwards;
 }
 .cursor-blink{
-  display:inline-block;width:9px;height:18px;background:var(--accent-hi);
+  display:inline-block;width:9px;height:18px;background:var(--grass-glow);
   vertical-align:middle;margin-left:4px;animation:blink 1s step-end infinite;
 }
 @keyframes blink{50%{opacity:0;}}
@@ -145,22 +124,12 @@ nav{
   padding:13px 20px;text-decoration:none;letter-spacing:1px;
   display:inline-flex;align-items:center;gap:8px;
   transition:transform .12s,box-shadow .12s;
-  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  box-shadow:3px 3px 0 rgba(0,0,0,.28);
 }
-.btn:hover {transform:translate(-2px,-2px);}
-.btn:active{transform:translate(2px,2px);}
-.btn-primary{
-  background:rgba(124,58,237,.35);color:var(--accent-hi);
-  border:1.5px solid var(--accent);
-  box-shadow:0 0 20px rgba(124,58,237,.25),3px 3px 0 rgba(0,0,0,.28);
-}
-.btn-primary:hover{box-shadow:0 0 30px rgba(124,58,237,.4),5px 5px 0 rgba(0,0,0,.28);}
-.btn-outline{
-  background:rgba(103,232,249,.08);color:var(--cyan);
-  border:1.5px solid var(--cyan);
-  box-shadow:0 0 20px rgba(103,232,249,.15),3px 3px 0 rgba(0,0,0,.28);
-}
-.btn-outline:hover{box-shadow:0 0 30px rgba(103,232,249,.25),5px 5px 0 rgba(0,0,0,.28);}
+.btn:hover {transform:translate(-2px,-2px);box-shadow:5px 5px 0 rgba(0,0,0,.28);}
+.btn:active{transform:translate(2px,2px);  box-shadow:1px 1px 0 rgba(0,0,0,.28);}
+.btn-primary{background:var(--grass);color:#fff;border:1.5px solid var(--grass-glow);}
+.btn-outline {background:transparent;color:var(--diamond);border:1.5px solid var(--diamond);}
 
 /* DIVIDERS */
 .px-div{
@@ -177,7 +146,7 @@ section{position:relative;z-index:1;}
 .inner{max-width:880px;margin:0 auto;padding:80px 6%;}
 .sec-label{
   font-family:'Press Start 2P';font-size:8px;
-  color:var(--accent-hi);letter-spacing:3px;margin-bottom:6px;opacity:.6;
+  color:var(--grass-hi);letter-spacing:3px;margin-bottom:6px;opacity:.6;
 }
 .sec-label::before{content:'# ';color:var(--txt3);}
 .sec-title{
@@ -187,73 +156,49 @@ section{position:relative;z-index:1;}
 }
 
 /* ABOUT */
-#about{
-  background:transparent;
-  transition:background .35s;
-}
-.about-inner-wrap{
-  background:var(--glass-bg);
-  border:1px solid var(--glass-bd);
-  backdrop-filter:blur(var(--glass-blur)) saturate(160%);
-  -webkit-backdrop-filter:blur(var(--glass-blur)) saturate(160%);
-  border-radius:2px;
-  padding:40px;
-}
+#about{background:var(--bg1);transition:background .35s;}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;}
 .about-text{font-size:20px;color:var(--txt2);line-height:1.85;}
 .about-text p+p{margin-top:14px;}
-.about-text strong{color:var(--accent-hi);font-weight:normal;}
+.about-text strong{color:var(--grass-glow);font-weight:normal;}
 .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .stat-block{
-  background:rgba(167,139,250,.07);padding:16px 14px;
-  border-left:2px solid var(--accent);
-  border:1px solid var(--glass-bd);
-  border-left:2px solid var(--accent);
-  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
-  transition:transform .18s,border-color .18s,box-shadow .18s;
+  background:var(--bg2);padding:16px 14px;
+  border-left:2px solid var(--grass-hi);
+  transition:transform .18s,border-color .18s;
 }
-.stat-block:hover{
-  transform:translate(-2px,-2px);
-  border-left-color:var(--accent-hi);
-  box-shadow:0 0 16px rgba(167,139,250,.15);
-}
-.stat-val{font-family:'Press Start 2P';font-size:17px;color:var(--accent-hi);display:block;margin-bottom:4px;}
+.stat-block:hover{transform:translate(-2px,-2px);border-color:var(--grass-glow);}
+.stat-val{font-family:'Press Start 2P';font-size:17px;color:var(--grass-glow);display:block;margin-bottom:4px;}
 .stat-lbl{font-size:16px;color:var(--txt2);}
 
 /* PROJECTS */
-#projects{background:transparent;transition:background .35s;}
+#projects{background:var(--bg0);transition:background .35s;}
 .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;}
 .proj-card{
-  background:var(--glass-bg);padding:22px 18px;
-  border:1px solid var(--glass-bd);
-  border-radius:2px;
+  background:var(--bg1);padding:22px 18px;
+  border:1.5px solid var(--bg3);
   position:relative;display:block;text-decoration:none;color:inherit;
-  backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));
+  box-shadow:3px 3px 0 rgba(0,0,0,.22);
   overflow:hidden;
   transition:transform .2s cubic-bezier(.16,1,.3,1),box-shadow .2s,border-color .2s;
 }
-.proj-card::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(167,139,250,.06) 0%,transparent 60%);
-  pointer-events:none;
-}
 .proj-card::after{
   content:'';position:absolute;inset:0;
-  background:linear-gradient(120deg,transparent 30%,rgba(167,139,250,.08) 50%,transparent 70%);
+  background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.04) 50%,transparent 70%);
   transform:translateX(-100%);transition:transform .5s;pointer-events:none;
 }
 .proj-card:hover::after{transform:translateX(100%);}
 .proj-card:hover{
   transform:translate(-3px,-3px);
-  box-shadow:0 0 24px rgba(124,58,237,.2),6px 6px 0 rgba(0,0,0,.18);
-  border-color:rgba(167,139,250,.4);
+  box-shadow:6px 6px 0 rgba(0,0,0,.28);
+  border-color:var(--grass-hi);
 }
 .proj-lang{
   position:absolute;top:12px;right:12px;
   font-family:'VT323';font-size:14px;color:var(--txt3);letter-spacing:1px;
 }
 .proj-name{
-  font-family:'Press Start 2P';font-size:8px;color:var(--cyan);
+  font-family:'Press Start 2P';font-size:8px;color:var(--diamond);
   margin-bottom:10px;line-height:1.7;padding-right:56px;
 }
 .proj-desc{font-size:17px;color:var(--txt2);line-height:1.65;margin-bottom:14px;min-height:48px;}
@@ -268,49 +213,35 @@ section{position:relative;z-index:1;}
 @keyframes pulse{50%{opacity:.25;}}
 
 /* CONNECT */
-#connect{background:transparent;transition:background .35s;}
-.connect-glass{
-  background:var(--glass-bg);
-  border:1px solid var(--glass-bd);
-  backdrop-filter:blur(var(--glass-blur)) saturate(160%);
-  -webkit-backdrop-filter:blur(var(--glass-blur)) saturate(160%);
-  border-radius:2px;
-  padding:40px;
-}
+#connect{background:var(--bg1);transition:background .35s;}
 .socials-row{display:flex;gap:10px;flex-wrap:wrap;}
 .social-btn{
   font-family:'Share Tech Mono';font-size:13px;letter-spacing:.4px;
   padding:10px 16px;text-decoration:none;
   display:inline-flex;align-items:center;gap:10px;
-  background:rgba(167,139,250,.07);color:var(--s-txt);
+  background:var(--s-bg);color:var(--s-txt);
   border:1px solid var(--s-bd);
-  border-radius:1px;
-  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  box-shadow:2px 2px 0 rgba(0,0,0,.12);
   transition:transform .15s,border-color .15s,color .15s,box-shadow .15s;
 }
 .social-btn:hover{
-  transform:translate(-2px,-2px);border-color:rgba(167,139,250,.5);
-  color:var(--accent-hi);
-  box-shadow:0 0 16px rgba(124,58,237,.2),4px 4px 0 rgba(0,0,0,.18);
+  transform:translate(-2px,-2px);border-color:var(--txt2);
+  color:var(--txt1);box-shadow:4px 4px 0 rgba(0,0,0,.18);
 }
 .social-btn:active{transform:translate(1px,1px);box-shadow:none;}
 .s-icon{width:14px;height:14px;flex-shrink:0;opacity:.65;}
 
 /* NEIGHBOUR */
-#neighbour{background:transparent;transition:background .35s;}
+#neighbour{background:var(--bg0);transition:background .35s;}
 .nbr-wrap{max-width:880px;margin:0 auto;padding:70px 6%;display:flex;align-items:center;gap:48px;flex-wrap:wrap;}
 .nbr-frame a{
   display:inline-block;padding:10px;
-  background:var(--glass-bg);
-  border:1px solid var(--glass-bd);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  background:var(--bg2);border:1.5px solid var(--bg3);
+  box-shadow:4px 4px 0 rgba(0,0,0,.25);
   transition:transform .2s cubic-bezier(.16,1,.3,1),border-color .2s,box-shadow .2s;
 }
-.nbr-frame a:hover{
-  transform:translate(-3px,-3px);
-  border-color:rgba(251,191,36,.4);
-  box-shadow:0 0 20px rgba(251,191,36,.2),7px 7px 0 rgba(0,0,0,.2);
-}
+.nbr-frame a:hover{transform:translate(-3px,-3px);border-color:var(--gold);box-shadow:7px 7px 0 rgba(0,0,0,.28);}
+/* skull image — natural size, pixelated rendering only */
 .nbr-frame img{display:block;image-rendering:pixelated;}
 .nbr-text{flex:1;min-width:200px;}
 .nbr-caption{font-size:26px;color:var(--txt2);opacity:.42;line-height:1.6;margin-bottom:6px;}
@@ -318,13 +249,11 @@ section{position:relative;z-index:1;}
 
 /* FOOTER */
 footer{
-  background:var(--glass-bg);
-  border-top:1px solid var(--glass-bd);
-  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  background:var(--bg0);border-top:1px solid var(--bg3);
   padding:24px 6%;text-align:center;font-size:16px;color:var(--txt3);
   position:relative;z-index:1;transition:background .35s;
 }
-footer span{color:var(--accent-hi);}
+footer span{color:var(--grass-hi);}
 
 /* ANIMATIONS */
 @keyframes slideUp{
@@ -338,6 +267,8 @@ footer span{color:var(--accent-hi);}
     transform .6s calc(var(--d,0)*1ms) cubic-bezier(.16,1,.3,1);
 }
 .reveal.vis{opacity:1;transform:none;}
+
+/* SECTION ENTRY — whole section slides in */
 .section-anim{
   opacity:0;transform:translateY(32px);
   transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1);
@@ -348,7 +279,6 @@ footer span{color:var(--accent-hi);}
   .about-grid{grid-template-columns:1fr;}
   .hero-name{font-size:18px;}
   .nav-links{gap:18px;}
-  .about-inner-wrap,.connect-glass{padding:24px 16px;}
 }
 </style>
 </head>
@@ -385,19 +315,17 @@ footer span{color:var(--accent-hi);}
   <div class="inner section-anim">
     <p class="sec-label reveal" style="--d:0">About</p>
     <h2 class="sec-title reveal" style="--d:60">Who am I?</h2>
-    <div class="about-inner-wrap reveal" style="--d:100">
-      <div class="about-grid">
-        <div class="about-text">
-          <p>Hey! I'm <strong>Anindya Biswas</strong> — a developer who loves crafting clean code and thoughtful software.</p>
-          <p>I build things for the web and beyond. When I'm not writing code, I'm probably digging through open-source projects or dreaming up the next thing to build.</p>
-          <p>Think of this portfolio like a Minecraft world — still under construction, but full of potential.</p>
-        </div>
-        <div class="stats-grid">
-          <div class="stat-block"><span class="stat-val" id="repo-count">—</span><span class="stat-lbl">Repos</span></div>
-          <div class="stat-block"><span class="stat-val" id="star-count">—</span><span class="stat-lbl">Stars</span></div>
-          <div class="stat-block"><span class="stat-val" id="lang-count">—</span><span class="stat-lbl">Languages</span></div>
-          <div class="stat-block"><span class="stat-val">∞</span><span class="stat-lbl">Ideas Left</span></div>
-        </div>
+    <div class="about-grid">
+      <div class="about-text reveal" style="--d:120">
+        <p>Hey! I'm <strong>Anindya Biswas</strong> — a developer who loves crafting clean code and thoughtful software.</p>
+        <p>I build things for the web and beyond. When I'm not writing code, I'm probably digging through open-source projects or dreaming up the next thing to build.</p>
+        <p>Think of this portfolio like a Minecraft world — still under construction, but full of potential.</p>
+      </div>
+      <div class="stats-grid reveal" style="--d:200">
+        <div class="stat-block"><span class="stat-val" id="repo-count">—</span><span class="stat-lbl">Repos</span></div>
+        <div class="stat-block"><span class="stat-val" id="star-count">—</span><span class="stat-lbl">Stars</span></div>
+        <div class="stat-block"><span class="stat-val" id="lang-count">—</span><span class="stat-lbl">Languages</span></div>
+        <div class="stat-block"><span class="stat-val">∞</span><span class="stat-lbl">Ideas Left</span></div>
       </div>
     </div>
   </div>
@@ -423,24 +351,33 @@ footer span{color:var(--accent-hi);}
   <div class="inner section-anim">
     <p class="sec-label reveal" style="--d:0">Connect</p>
     <h2 class="sec-title reveal" style="--d:60">Find Me Online</h2>
-    <div class="connect-glass reveal" style="--d:100">
-      <div class="socials-row">
+    <div class="socials-row reveal" style="--d:130">
 
-        <a href="https://github.com/AnindyaBsws" target="_blank" rel="noopener" class="social-btn">
-          <svg class="s-icon" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-          </svg>
-          github / AnindyaBsws
-        </a>
+      <a href="https://github.com/AnindyaBsws" target="_blank" rel="noopener" class="social-btn">
+        <svg class="s-icon" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+        github / AnindyaBsws
+      </a>
 
-        <a href="https://linkedin.com/in/YOUR_HANDLE" target="_blank" rel="noopener" class="social-btn">
-          <svg class="s-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
-          linkedin / anindya
-        </a>
+      <!-- Replace YOUR_HANDLE with your Instagram username -->
+      <a href="https://instagram.com/YOUR_HANDLE" target="_blank" rel="noopener" class="social-btn">
+        <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/>
+        </svg>
+        instagram / @yourhandle
+      </a>
 
-      </div>
+      <!-- Replace YOUR_HANDLE with your LinkedIn username -->
+      <a href="https://linkedin.com/in/YOUR_HANDLE" target="_blank" rel="noopener" class="social-btn">
+        <svg class="s-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+        linkedin / anindya
+      </a>
+
     </div>
   </div>
 </section>
@@ -469,11 +406,14 @@ footer span{color:var(--accent-hi);}
 /* FLOATING BLOCKS */
 (function(){
   const c=document.getElementById('bg-blocks');
-  const cols=['#7c3aed','#2d1b69','#1e1050','#4c1d95','#0e7490','#164e63'];
-  for(let i=0;i<18;i++){
+  const isDark=window.matchMedia('(prefers-color-scheme:dark)').matches;
+  const cols=isDark
+    ?['#3a7a20','#2a2a2a','#1e4060','#5a4a10']
+    :['#4a9828','#888880','#2080a0','#8a7010'];
+  for(let i=0;i<16;i++){
     const b=document.createElement('div');
-    const sz=Math.random()*18+8;
-    const dur=Math.random()*24+12;
+    const sz=Math.random()*20+10;
+    const dur=Math.random()*22+10;
     const delay=-(Math.random()*dur);
     b.className='blk';
     b.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:-60px;background:${cols[Math.floor(Math.random()*cols.length)]};animation-duration:${dur}s;animation-delay:${delay}s;`;
@@ -542,7 +482,7 @@ async function load(){
   }catch{
     grid.innerHTML=`<div class="loading-lbl" style="animation:none;opacity:.4;">
       Could not load —
-      <a href="https://github.com/${user}" target="_blank" style="color:var(--cyan);font-family:'Press Start 2P';font-size:7px;">github.com/${user}</a>
+      <a href="https://github.com/${user}" target="_blank" style="color:var(--diamond);font-family:'Press Start 2P';font-size:7px;">github.com/${user}</a>
     </div>`;
   }
 }
