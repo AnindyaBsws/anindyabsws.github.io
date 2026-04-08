@@ -1,3 +1,4 @@
+<!-- ⚡ FULL CODE (MINECRAFT + GLASS + BLUE/PURPLE) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,22 +7,25 @@
 
 <title>Anindya Biswas | Full Stack Developer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#0b0f1a;
+  --bg:#0a0a0f;
   --glass:rgba(255,255,255,0.05);
-  --border:rgba(255,255,255,0.12);
-  --text:#e6e9ef;
-  --accent:#4fc3f7;
+  --border:rgba(255,255,255,0.15);
+
+  --accent:#6c8cff;   /* blue */
+  --accent2:#b06cff;  /* purple */
+
+  --text:#e8e8e0;
+  --muted:#8a8a82;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
-
 body{
-  font-family:'Inter',sans-serif;
-  background:linear-gradient(135deg,#0b0f1a,#111827);
+  margin:0;
+  font-family:'VT323', monospace;
+  background:var(--bg);
   color:var(--text);
 }
 
@@ -30,20 +34,53 @@ nav{
   position:fixed;
   width:100%;
   top:0;
-  backdrop-filter:blur(12px);
-  background:rgba(0,0,0,0.3);
   display:flex;
   justify-content:space-between;
-  padding:15px 40px;
-  z-index:100;
+  padding:15px 6%;
+  backdrop-filter:blur(10px);
+  background:rgba(10,10,15,0.6);
+  border-bottom:1px solid var(--border);
 }
 
-nav a{color:var(--text);text-decoration:none;margin-left:20px;font-size:14px;}
+nav a{
+  color:var(--muted);
+  margin-left:20px;
+  text-decoration:none;
+}
+nav a:hover{color:var(--accent);}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero h1{
+  font-family:'Press Start 2P';
+  font-size:32px;
+}
+
+.hero span{
+  color:var(--accent2);
+}
+
+.btn{
+  margin-top:20px;
+  padding:12px 20px;
+  border:1px solid var(--accent);
+  text-decoration:none;
+  color:var(--accent);
+  display:inline-block;
+}
 
 /* SECTIONS */
 section{
-  padding:100px 40px;
-  max-width:1000px;
+  padding:80px 6%;
+  max-width:900px;
   margin:auto;
 }
 
@@ -51,71 +88,56 @@ section{
 .card{
   background:var(--glass);
   border:1px solid var(--border);
-  padding:25px;
-  border-radius:16px;
-  backdrop-filter:blur(14px);
-  margin-bottom:20px;
+  padding:20px;
+  margin:15px 0;
+  backdrop-filter:blur(12px);
   transition:0.3s;
 }
-
 .card:hover{
-  transform:translateY(-5px);
-  border-color:var(--accent);
+  transform:translate(-3px,-3px);
+  border-color:var(--accent2);
 }
 
-/* HERO */
-.hero{
-  text-align:center;
-  padding-top:150px;
+/* TITLES */
+h2{
+  font-family:'Press Start 2P';
+  font-size:14px;
+  margin-bottom:20px;
 }
 
-.hero h1{
-  font-size:42px;
-}
-
-.hero p{
-  margin-top:10px;
-  opacity:0.8;
-}
-
-.btn{
-  display:inline-block;
-  margin:15px 10px;
-  padding:10px 20px;
-  border:1px solid var(--accent);
-  border-radius:8px;
-  text-decoration:none;
+/* LINKS */
+.link{
   color:var(--accent);
 }
-
-h2{margin-bottom:20px;font-size:24px;}
-ul{margin-left:20px;}
 </style>
 </head>
 
 <body>
 
 <nav>
-  <div><b>Anindya</b></div>
+  <div>AB.exe</div>
   <div>
+    <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<section class="hero">
-  <h1>Anindya Biswas</h1>
+<div class="hero">
+  <h1>Anindya <span>Biswas</span></h1>
   <p>Full-Stack Developer | System Design Enthusiast</p>
 
   <a href="#projects" class="btn">View Projects</a>
   <a href="Anindya_Biswas_Resume.pdf" class="btn">Download Resume</a>
-</section>
+</div>
 
-<section>
-  <h2>About Me</h2>
+<section id="about">
+  <h2>About</h2>
   <div class="card">
-    A Full-Stack Developer with hands-on experience in Flask, React, and modern JavaScript, dedicated to building scalable and efficient applications. Strong in REST APIs, JWT authentication, and system design with a focus on production-ready software.
+    Full-Stack Developer with experience in Flask, React, and modern JavaScript.  
+    Skilled in building scalable systems, REST APIs, and secure authentication.  
+    Passionate about system design and production-ready applications.
   </div>
 </section>
 
@@ -125,36 +147,32 @@ ul{margin-left:20px;}
   <div class="card">
     <h3>Splitwise Expense Tracker</h3>
     <p>
-      Full-stack expense sharing platform with JWT authentication and debt simplification algorithm for optimized transactions.
+      Full-stack expense sharing platform with JWT authentication and debt simplification algorithm.
     </p>
-
     <ul>
-      <li>Built REST APIs using Flask</li>
-      <li>Implemented secure authentication (JWT)</li>
-      <li>Optimized transactions using custom algorithm</li>
+      <li>Flask REST API</li>
+      <li>JWT Authentication</li>
+      <li>Debt optimization algorithm</li>
       <li>React frontend with protected routes</li>
     </ul>
 
-    <p><b>Tech:</b> Flask, React, PostgreSQL, Tailwind</p>
+    <p><b>Tech:</b> Flask, React, PostgreSQL</p>
 
-    <a href="https://splitwise-clone-liart.vercel.app/" class="btn">Live</a>
-    <a href="https://github.com/AnindyaBsws" class="btn">GitHub</a>
+    <a href="https://splitwise-clone-liart.vercel.app/" class="link">Live</a> |
+    <a href="https://github.com/AnindyaBsws" class="link">GitHub</a>
   </div>
-
-  <h2>Other Projects</h2>
 
   <div class="card">
     <h3>Weather Monitoring System (IoT)</h3>
     <p>
-      Real-time weather monitoring system using ESP8266 with 90% accuracy in data visualization.
+      Real-time IoT weather system using ESP8266 with 90% accuracy.
     </p>
-    <p><b>Tech:</b> React, Node.js, MongoDB</p>
   </div>
 
   <div class="card">
     <h3>Water Tank Controller</h3>
     <p>
-      Embedded system using Hall Effect Sensor reducing manual effort by 30%.
+      Embedded system reducing manual effort by 30%.
     </p>
   </div>
 
@@ -164,8 +182,8 @@ ul{margin-left:20px;}
   <h2>Skills</h2>
   <div class="card">
     <p><b>Languages:</b> C++, Python, JavaScript, Java, C</p>
-    <p><b>Frameworks:</b> React, Flask, Node.js, Express, Tailwind</p>
-    <p><b>Databases:</b> PostgreSQL, MongoDB, MySQL</p>
+    <p><b>Frameworks:</b> React, Flask, Node.js</p>
+    <p><b>Databases:</b> PostgreSQL, MongoDB</p>
     <p><b>Tools:</b> Git, Docker, Postman, Arduino</p>
   </div>
 </section>
@@ -186,8 +204,8 @@ ul{margin-left:20px;}
   <div class="card">
     <p>Email: biswas.anindya.dev@gmail.com</p>
     <p>
-      <a href="https://github.com/AnindyaBsws">GitHub</a><br>
-      <a href="https://www.linkedin.com/in/anindya-biswas-472897219/">LinkedIn</a>
+      <a href="https://github.com/AnindyaBsws" class="link">GitHub</a><br>
+      <a href="https://www.linkedin.com/in/anindya-biswas-472897219/" class="link">LinkedIn</a>
     </p>
   </div>
 </section>
