@@ -481,9 +481,13 @@ async function load(){
 load();
 
 /* TYPEWRITER EFFECT */
-(function(){
+document.addEventListener("DOMContentLoaded", function(){
+
   const text = "Developer · Builder · Explorer of digital worlds";
   const el = document.getElementById("typed-text");
+
+  if(!el) return; // safety check
+
   let i = 0;
 
   function type(){
@@ -491,13 +495,11 @@ load();
       el.textContent += text.charAt(i);
       i++;
       setTimeout(type, Math.random()*50 + 30);
-    } else {
-      setTimeout(()=>{},5000);
     }
   }
 
-  setTimeout(type, 600);
-})();
+  setTimeout(type, 800); // slight delay for animation sync
+});
 
 
 </script>
