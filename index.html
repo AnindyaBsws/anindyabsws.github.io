@@ -1,113 +1,48 @@
-<!-- ⚡ FULL CODE (MINECRAFT + GLASS + BLUE/PURPLE) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anindya Biswas — Portfolio</title>
 
-<title>Anindya Biswas | Full Stack Developer</title>
-
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --bg:#0a0a0f;
-  --glass:rgba(255,255,255,0.05);
-  --border:rgba(255,255,255,0.15);
-
-  --accent:#6c8cff;   /* blue */
-  --accent2:#b06cff;  /* purple */
-
-  --text:#e8e8e0;
-  --muted:#8a8a82;
-}
-
 body{
   margin:0;
   font-family:'VT323', monospace;
-  background:var(--bg);
-  color:var(--text);
+  background:#0a0a0c;
+  color:#e8e8e0;
 }
 
-/* NAV */
 nav{
   position:fixed;
   width:100%;
   top:0;
+  background:#111;
+  padding:10px 20px;
   display:flex;
   justify-content:space-between;
-  padding:15px 6%;
-  backdrop-filter:blur(10px);
-  background:rgba(10,10,15,0.6);
-  border-bottom:1px solid var(--border);
 }
 
-nav a{
-  color:var(--muted);
-  margin-left:20px;
-  text-decoration:none;
-}
-nav a:hover{color:var(--accent);}
+a{color:#5cb82f; text-decoration:none;}
 
-/* HERO */
-.hero{
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-}
+section{padding:80px 20px; max-width:900px; margin:auto;}
 
-.hero h1{
-  font-family:'Press Start 2P';
-  font-size:32px;
-}
-
-.hero span{
-  color:var(--accent2);
-}
+h1,h2{font-family:'Press Start 2P';}
 
 .btn{
-  margin-top:20px;
-  padding:12px 20px;
-  border:1px solid var(--accent);
-  text-decoration:none;
-  color:var(--accent);
+  padding:10px 15px;
+  border:1px solid #5cb82f;
   display:inline-block;
+  margin:5px;
 }
 
-/* SECTIONS */
-section{
-  padding:80px 6%;
-  max-width:900px;
-  margin:auto;
-}
-
-/* GLASS CARD */
 .card{
-  background:var(--glass);
-  border:1px solid var(--border);
-  padding:20px;
-  margin:15px 0;
-  backdrop-filter:blur(12px);
-  transition:0.3s;
-}
-.card:hover{
-  transform:translate(-3px,-3px);
-  border-color:var(--accent2);
-}
-
-/* TITLES */
-h2{
-  font-family:'Press Start 2P';
-  font-size:14px;
-  margin-bottom:20px;
-}
-
-/* LINKS */
-.link{
-  color:var(--accent);
+  border:1px solid #333;
+  padding:15px;
+  margin:10px 0;
 }
 </style>
 </head>
@@ -124,90 +59,63 @@ h2{
   </div>
 </nav>
 
-<div class="hero">
-  <h1>Anindya <span>Biswas</span></h1>
-  <p>Full-Stack Developer | System Design Enthusiast</p>
+<section>
+  <h1>Anindya Biswas</h1>
+  <p>Full Stack Developer | Flask | JavaScript</p>
 
   <a href="#projects" class="btn">View Projects</a>
-  <a href="Anindya_Biswas_Resume.pdf" class="btn">Download Resume</a>
-</div>
+  <a href="/resume.pdf" class="btn">Download Resume</a>
+</section>
 
 <section id="about">
-  <h2>About</h2>
-  <div class="card">
-    Full-Stack Developer with experience in Flask, React, and modern JavaScript.  
-    Skilled in building scalable systems, REST APIs, and secure authentication.  
-    Passionate about system design and production-ready applications.
-  </div>
+  <h2>About Me</h2>
+  <p>
+    I am a developer focused on building real-world applications using Flask, JavaScript,
+    and modern web technologies. I enjoy solving problems and building scalable systems.
+  </p>
 </section>
 
 <section id="projects">
-  <h2>Featured Project</h2>
+  <h2>Projects</h2>
 
   <div class="card">
-    <h3>Splitwise Expense Tracker</h3>
+    <h3>Splitwise Clone</h3>
     <p>
-      Full-stack expense sharing platform with JWT authentication and debt simplification algorithm.
+      Full-stack expense sharing app with JWT authentication, group management,
+      and debt simplification algorithm.
     </p>
-    <ul>
-      <li>Flask REST API</li>
-      <li>JWT Authentication</li>
-      <li>Debt optimization algorithm</li>
-      <li>React frontend with protected routes</li>
-    </ul>
-
     <p><b>Tech:</b> Flask, React, PostgreSQL</p>
-
-    <a href="https://splitwise-clone-liart.vercel.app/" class="link">Live</a> |
-    <a href="https://github.com/AnindyaBsws" class="link">GitHub</a>
+    <a href="#">GitHub</a>
   </div>
 
   <div class="card">
-    <h3>Weather Monitoring System (IoT)</h3>
+    <h3>Weather Monitoring System</h3>
     <p>
-      Real-time IoT weather system using ESP8266 with 90% accuracy.
+      IoT-based system using ESP8266 to display real-time weather data on a web dashboard.
     </p>
-  </div>
-
-  <div class="card">
-    <h3>Water Tank Controller</h3>
-    <p>
-      Embedded system reducing manual effort by 30%.
-    </p>
+    <p><b>Tech:</b> JavaScript, Node.js</p>
+    <a href="#">GitHub</a>
   </div>
 
 </section>
 
 <section id="skills">
   <h2>Skills</h2>
-  <div class="card">
-    <p><b>Languages:</b> C++, Python, JavaScript, Java, C</p>
-    <p><b>Frameworks:</b> React, Flask, Node.js</p>
-    <p><b>Databases:</b> PostgreSQL, MongoDB</p>
-    <p><b>Tools:</b> Git, Docker, Postman, Arduino</p>
-  </div>
-</section>
-
-<section>
-  <h2>Achievements</h2>
-  <div class="card">
-    <ul>
-      <li>Codeforces Rating: 1153</li>
-      <li>Solved 200+ problems</li>
-      <li>Algozenith XP: 1818</li>
-    </ul>
-  </div>
+  <p>
+    Frontend: HTML, CSS, JavaScript, React<br>
+    Backend: Flask, Node.js<br>
+    Database: MongoDB, PostgreSQL<br>
+    Tools: Git, Docker
+  </p>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
-  <div class="card">
-    <p>Email: biswas.anindya.dev@gmail.com</p>
-    <p>
-      <a href="https://github.com/AnindyaBsws" class="link">GitHub</a><br>
-      <a href="https://www.linkedin.com/in/anindya-biswas-472897219/" class="link">LinkedIn</a>
-    </p>
-  </div>
+  <p>Email: your@email.com</p>
+  <p>
+    <a href="https://github.com/AnindyaBsws">GitHub</a><br>
+    <a href="#">LinkedIn</a>
+  </p>
 </section>
 
 </body>
