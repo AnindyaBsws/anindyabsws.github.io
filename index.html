@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Anindya Biswas | Full Stack Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0b0f1a;
+  --glass:rgba(255,255,255,0.05);
+  --border:rgba(255,255,255,0.12);
+  --text:#e6e9ef;
+  --accent:#4fc3f7;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:linear-gradient(135deg,#0b0f1a,#111827);
+  color:var(--text);
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  backdrop-filter:blur(12px);
+  background:rgba(0,0,0,0.3);
+  display:flex;
+  justify-content:space-between;
+  padding:15px 40px;
+  z-index:100;
+}
+
+nav a{color:var(--text);text-decoration:none;margin-left:20px;font-size:14px;}
+
+/* SECTIONS */
+section{
+  padding:100px 40px;
+  max-width:1000px;
+  margin:auto;
+}
+
+/* GLASS CARD */
+.card{
+  background:var(--glass);
+  border:1px solid var(--border);
+  padding:25px;
+  border-radius:16px;
+  backdrop-filter:blur(14px);
+  margin-bottom:20px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:var(--accent);
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding-top:150px;
+}
+
+.hero h1{
+  font-size:42px;
+}
+
+.hero p{
+  margin-top:10px;
+  opacity:0.8;
+}
+
+.btn{
+  display:inline-block;
+  margin:15px 10px;
+  padding:10px 20px;
+  border:1px solid var(--accent);
+  border-radius:8px;
+  text-decoration:none;
+  color:var(--accent);
+}
+
+h2{margin-bottom:20px;font-size:24px;}
+ul{margin-left:20px;}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div><b>Anindya</b></div>
+  <div>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Anindya Biswas</h1>
+  <p>Full-Stack Developer | System Design Enthusiast</p>
+
+  <a href="#projects" class="btn">View Projects</a>
+  <a href="Anindya_Biswas_Resume.pdf" class="btn">Download Resume</a>
+</section>
+
+<section>
+  <h2>About Me</h2>
+  <div class="card">
+    A Full-Stack Developer with hands-on experience in Flask, React, and modern JavaScript, dedicated to building scalable and efficient applications. Strong in REST APIs, JWT authentication, and system design with a focus on production-ready software.
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Featured Project</h2>
+
+  <div class="card">
+    <h3>Splitwise Expense Tracker</h3>
+    <p>
+      Full-stack expense sharing platform with JWT authentication and debt simplification algorithm for optimized transactions.
+    </p>
+
+    <ul>
+      <li>Built REST APIs using Flask</li>
+      <li>Implemented secure authentication (JWT)</li>
+      <li>Optimized transactions using custom algorithm</li>
+      <li>React frontend with protected routes</li>
+    </ul>
+
+    <p><b>Tech:</b> Flask, React, PostgreSQL, Tailwind</p>
+
+    <a href="https://splitwise-clone-liart.vercel.app/" class="btn">Live</a>
+    <a href="https://github.com/AnindyaBsws" class="btn">GitHub</a>
+  </div>
+
+  <h2>Other Projects</h2>
+
+  <div class="card">
+    <h3>Weather Monitoring System (IoT)</h3>
+    <p>
+      Real-time weather monitoring system using ESP8266 with 90% accuracy in data visualization.
+    </p>
+    <p><b>Tech:</b> React, Node.js, MongoDB</p>
+  </div>
+
+  <div class="card">
+    <h3>Water Tank Controller</h3>
+    <p>
+      Embedded system using Hall Effect Sensor reducing manual effort by 30%.
+    </p>
+  </div>
+
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card">
+    <p><b>Languages:</b> C++, Python, JavaScript, Java, C</p>
+    <p><b>Frameworks:</b> React, Flask, Node.js, Express, Tailwind</p>
+    <p><b>Databases:</b> PostgreSQL, MongoDB, MySQL</p>
+    <p><b>Tools:</b> Git, Docker, Postman, Arduino</p>
+  </div>
+</section>
+
+<section>
+  <h2>Achievements</h2>
+  <div class="card">
+    <ul>
+      <li>Codeforces Rating: 1153</li>
+      <li>Solved 200+ problems</li>
+      <li>Algozenith XP: 1818</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: biswas.anindya.dev@gmail.com</p>
+    <p>
+      <a href="https://github.com/AnindyaBsws">GitHub</a><br>
+      <a href="https://www.linkedin.com/in/anindya-biswas-472897219/">LinkedIn</a>
+    </p>
+  </div>
+</section>
+
+</body>
+</html>
